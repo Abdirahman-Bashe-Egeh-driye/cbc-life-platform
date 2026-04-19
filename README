@@ -1,0 +1,132 @@
+# cbc Life Management Platform
+### Full-Stack: Node.js Backend + HTML/CSS/JS Frontend
+
+---
+
+## 📁 Project Structure
+
+```
+cbc-app/
+├── server.js          ← Express backend (API + auth)
+├── package.json       ← Dependencies
+├── data/
+│   ├── users.json     ← User accounts (auto-created)
+│   └── users/         ← Per-user data files (auto-created)
+├── public/
+│   └── index.html     ← Full frontend app
+└── README.md
+```
+
+---
+
+## 🚀 Quick Start
+
+### 1. Install Node.js
+Download from https://nodejs.org (v18 or higher)
+
+### 2. Open the project in VS Code
+```bash
+cd cbc-app
+code .
+```
+
+### 3. Install dependencies
+Open the VS Code terminal (Ctrl+`) and run:
+```bash
+npm install
+```
+
+### 4. Start the server
+```bash
+npm start
+```
+You will see:
+```
+  ╔═══════════════════════════════════╗
+  ║   cbc Life Platform — Backend     ║
+  ║   Running on http://localhost:3000 ║
+  ╚═══════════════════════════════════╝
+```
+
+### 5. Open in browser
+Visit: **http://localhost:3000**
+
+---
+
+## 🔧 Development Mode (auto-restart)
+```bash
+npm run dev
+```
+Uses `nodemon` — server restarts automatically when you edit `server.js`.
+
+---
+
+## 🔑 Demo Account
+A demo account is pre-registered when you first start the server:
+- **Email:** demo@cbc.app
+- **Password:** demo123
+
+Or click **"Continue with Demo Account"** on the login screen.
+
+---
+
+## 🌐 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/auth/register | Create account |
+| POST | /api/auth/login | Login → returns JWT |
+| GET | /api/auth/me | Verify token |
+| GET/PUT | /api/userdata | Bulk sync all data |
+| GET/POST/PUT/DELETE | /api/tasks | Task management |
+| GET/POST/PUT/DELETE | /api/habits | Habit tracking |
+| GET/POST/PUT/DELETE | /api/nutrition/meals | Meal logging |
+| GET/PUT | /api/nutrition/targets | Macro targets |
+| GET/POST/PUT/DELETE | /api/exam/topics | Exam topics |
+| GET/PUT | /api/exam/info | Exam settings |
+| GET/POST/PUT/DELETE | /api/challenges | Challenges |
+| GET/PUT | /api/planner | Daily planner |
+| GET/PUT | /api/reflection | Daily reflection |
+| GET/POST/DELETE | /api/focus/sessions | Focus sessions |
+| GET/PUT | /api/focus/settings | Pomodoro settings |
+| GET/PUT | /api/achievements/overrides | Manual unlock/lock |
+| GET/POST/PUT/DELETE | /api/achievements/custom | Custom achievements |
+
+All endpoints except `/api/auth/*` require:
+```
+Authorization: Bearer <your-jwt-token>
+```
+
+---
+
+## 🔒 Security Notes
+- Passwords are hashed with **bcrypt** (10 rounds)
+- Authentication uses **JWT** tokens (30-day expiry)
+- Change `JWT_SECRET` in `server.js` before deploying to production
+- Data is stored in local JSON files — for production use MongoDB or PostgreSQL
+
+---
+
+## 🚀 Deploy to Production
+
+### Render.com (Free)
+1. Push this folder to a GitHub repo
+2. Go to render.com → New Web Service
+3. Connect your repo, set build command: `npm install`
+4. Set start command: `npm start`
+5. Deploy!
+
+### Environment Variables (production)
+```
+PORT=3000
+JWT_SECRET=your-very-long-random-secret-here
+```
+
+---
+
+## 🛠 Tech Stack
+- **Backend:** Node.js, Express, bcryptjs, jsonwebtoken
+- **Frontend:** Pure HTML/CSS/JavaScript (no framework)
+- **Database:** JSON files (file-based, no setup needed)
+- **Charts:** Chart.js
+- **Fonts:** Google Fonts (Syne + DM Mono)

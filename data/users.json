@@ -1,0 +1,16 @@
+[
+  {
+    "id": "demo-user-001",
+    "name": "cbc",
+    "email": "demo@cbc.app",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "c0e0a130-ce94-4570-9151-3160f41f25a4",
+    "name": "mohamed",
+    "email": "zapiryre@gmail.com",
+    "password": "$2a$10$kc411PXdbrJFTIlbGZgQKOf0Xk2P9dr/15hegkVuTiDih1Y4yqUtW",
+    "createdAt": "2026-04-19T12:29:37.778Z"
+  }
+]
